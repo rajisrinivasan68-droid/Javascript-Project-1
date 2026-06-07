@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Switch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img id="bulb" src="bulboff.jpg" alt="Bulb">
+
+
+
+        <img id="switch" src="swoff.png" alt="Switch">
+
+        <p id="status">Bulb is OFF</p>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    let bulb = document.getElementById("bulb");
+    let sw = document.getElementById("switch");
+    let statusText = document.getElementById("status");
+    let isOn = false;
+    sw.addEventListener("click", function () {
+        if (isOn) {
+            bulb.src="bulboff.jpg";
+            sw.src="swoff.png";
+            bulb.classList.remove("active");
+            statusText.textContent="Bulb is OFF";
+            isOn=false;
+        } else {
+            bulb.src="bulbon.jpg";
+            sw.src="swonn.png";
+            bulb.classList.add("active");
+            statusText.textContent="Bulb is ON";
+            isOn=true;
+
+        }
+    });
+</script>
